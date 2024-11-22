@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const { string } = require('zod');
 
-mongoose.connect("mongodb://localhost:27017/paykaro");
+require('dotenv').config();
+const MONGO_URI = process.env.MONGO_URI;
+mongoose.connect(MONGO_URI);
 
 const userSchema = new mongoose.Schema({
   username : {
